@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter utilisateur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-violet-100 w-screen flex flex-col gap-4 justify-center py ">
+    <div class="flex justify-center items-center">
+        <h1 class="text-3xl text-violet-500 font-bold">Inscription : </h1>
+    </div>
+
+    <div class="container mx-auto my-8 mt-8">
+        <form class="flex flex-col gap-3 justify-center py" method="POST" action="/add_user">
+            <label class="text-3xl text-violet-900 font-bold" for="nom">Nom : </label>
+            <input type="text" name="nom" id="nom" required><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="prenom">Prénom : </label>
+            <input type="text" name="prenom" id="prenom" required><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="pseudo">Nom d'utilisateur : </label>
+            <input type="text" name="pseudo" id="pseudo" required><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="mdp">Mot de passe : </label>
+            <input type="text" name="mdp" id="mdp" required><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="age">Date de naissance :</label>
+            <input type="date" name="age" id="age" required><br>
+
+            <p class="text-3xl text-violet-900 font-bold">Genre :</p>
+            <div class="flex gap-4">
+                <input type="radio" name="genre" value="homme" id="homme"> <label for="homme" required>homme</label>
+                <input type="radio" name="genre" value="femme" id="femme"> <label for="femme" required>femme</label>
+            </div><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="mail">Email</label>
+            <input type="email" name="mail" id="mail" required><br>
+
+            <button class="bg-violet-500 text-white py-2 px-4 rounded" type="submit">valider</button>
+        </form>
+    </div>
+    
+</body>
+</html>

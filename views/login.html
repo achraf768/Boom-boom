@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-violet-100 w-screen flex flex-col gap-4 justify-center py ">
+    <div class="flex justify-center items-center">
+        <h2 class="text-3xl text-violet-500 font-bold">Page de Connexion</h2>
+    </div>
+
+    <div class="container mx-auto my-8 mt-10">
+        <form class="flex flex-col gap-8 justify-center py" method="post" action="/">
+            <label class="text-3xl text-violet-900 font-bold" for="pseudo_utilisateur">Nom d'utilisateur:</label>
+            <input type="text" id="pseudo_utilisateur" name="pseudo_utilisateur" required><br>
+            
+            <label class="text-3xl text-violet-900 font-bold" for="mot_de_passe">Mot de passe:</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
+            
+            <input class="bg-violet-500 text-white py-2 px-4 rounded" type="submit" value="Se connecter">
+        </form>
+    </div>
+    
+    <div class="container mx-auto my-8 mt-10">
+        <div>
+            <p class="text-3xl text-violet-900 font-bold">Pas encore inscrit ?</p>
+        </div>
+        
+        <div class="mt-4">
+            <a class="bg-violet-500 text-white py-2 px-4 rounded" href="/add_user">S'inscrire</a>
+        </div>
+    </div>
+
+</body>
+</html>

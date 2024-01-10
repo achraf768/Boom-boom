@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-violet-100 w-screen flex flex-col gap-4 justify-center py ">
+    <div class="flex justify-center items-center">
+        <h1 class="text-3xl text-violet-500 font-bold">Vos préférences actuelles:</h1>
+    </div>
+
+    <div class="container mx-auto my-8">
+        <table class="min-w-full bg-white border border-teal-500">
+            <thead>
+                <tr class="bg-violet-500 text-white">
+                    <th>album préféré</th>
+                    <th>groupe préféré</th>
+                    <th>genre préféré</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for preference in preferences %}
+                    <tr>
+                        <td class="text-center">{{ preference[0] }}</td>
+                        <td class="text-center">{{ preference[1] }}</td>
+                        <td class="text-center">{{ preference[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="flex justify-center items-center">
+        <h1 class="text-3xl text-violet-500 font-bold">Ajouter des préférences :</h1>
+    </div>
+
+    <div class="container mx-auto my-8 mt-8">
+        <form class="flex flex-col gap-3 justify-center py" method="POST" action="/add_preferences">
+
+            <label class="text-3xl text-violet-900 font-bold" for="genre">Genre musical préféré : </label>
+            <select name="genre" id="genre" required>
+                    <option value="aucun">aucun</option>
+                {% for genre in liste_genres %}
+                    <option value="{{genre}}">{{genre}}</option>
+                {% endfor %}
+                
+            </select><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="artist">Artiste préféré : </label>
+            <select name="artist" id="artist" required>
+                    <option value="aucun">aucun</option>
+                {% for artiste in liste_artistes %}
+                    <option value="{{artiste}}">{{artiste}}</option>
+                {% endfor %}
+            </select><br>
+
+            <label class="text-3xl text-violet-900 font-bold" for="album">Album préféré : </label>
+            <select name="album" id="album" required>
+                    <option value="aucun">aucun</option>
+                {% for album in liste_albums %}
+                    <option value="{{album}}">{{album}}</option>
+                {% endfor %}
+            </select><br>
+
+            <button class="bg-violet-500 text-white py-2 px-4 rounded" type="submit">Valider</button>
+        </form>
+    </div>
+    
+</body>
+</html>

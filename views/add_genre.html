@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter genre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-violet-100 w-screen flex flex-col gap-4 justify-center py ">
+    <div class="flex justify-center items-center">
+        <h1 class="text-3xl text-violet-500 font-bold">Ajouter un genre musicale : </h1>
+    </div>
+
+    <div class="container mx-auto my-8 mt-8">
+        <form class="flex flex-col gap-5 justify-center py" method="POST" action="/add_genre">
+            <label class="text-3xl text-violet-900 font-bold" for="genre">Nom du genre :</label>
+            <input type="text" name="genre" id="genre" required>
+
+            <button class="bg-violet-500 text-white py-2 px-4 rounded" type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+</html>
